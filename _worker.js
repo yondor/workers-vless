@@ -258,6 +258,13 @@ export default {
 			});
 		}
 
+		return new Response(JSON.stringify(request.cf, null, 4), {
+        	status: 200,
+            headers: {
+				"Content-Type": "application/json;charset=utf-8",
+            },
+        });
+		
 		const url = new URL(req.url);
 		url.hostname = 'example.com';
 		return fetch(new Request(url, req));
